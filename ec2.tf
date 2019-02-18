@@ -1,5 +1,5 @@
 data "aws_ami" "amazon_linux" {
-  most_recent      = true
+  most_recent = true
 
   filter {
     name   = "owner-alias"
@@ -13,13 +13,13 @@ data "aws_ami" "amazon_linux" {
 }
 
 resource "tls_private_key" "lab" {
-  algorithm   = "RSA"
-  rsa_bits = "2048"
+  algorithm = "RSA"
+  rsa_bits  = "2048"
 }
 
 resource "local_file" "key" {
-    content     = "${tls_private_key.lab.private_key_pem}"
-    filename = "${path.module}/instance.pem"
+  content  = "${tls_private_key.lab.private_key_pem}"
+  filename = "${path.module}/instance.pem"
 }
 
 resource "aws_key_pair" "lab" {
@@ -32,16 +32,16 @@ resource "aws_instance" "a" {
   instance_type = "t2.micro"
 
   vpc_security_group_ids = ["${aws_security_group.a.id}"]
-  subnet_id = "${aws_subnet.a.id}"
-  key_name = "${aws_key_pair.lab.key_name}"
+  subnet_id              = "${aws_subnet.a.id}"
+  key_name               = "${aws_key_pair.lab.key_name}"
 
   # Do I need these?
-  source_dest_check = false # might be required for the gateway to receive traffic that doesn't match its IP.
+  source_dest_check           = false # might be required for the gateway to receive traffic that doesn't match its IP.
   associate_public_ip_address = true
 
   tags {
     Name = "lab-instance-a"
-    Lab = "aws-route-lab"
+    Lab  = "aws-route-lab"
   }
 }
 
@@ -50,15 +50,15 @@ resource "aws_instance" "b" {
   instance_type = "t2.micro"
 
   vpc_security_group_ids = ["${aws_security_group.b.id}"]
-  subnet_id = "${aws_subnet.b.id}"
-  key_name = "${aws_key_pair.lab.key_name}"
+  subnet_id              = "${aws_subnet.b.id}"
+  key_name               = "${aws_key_pair.lab.key_name}"
 
   # Do I need these?
-  source_dest_check = false # might be required for the gateway to receive traffic that doesn't match its IP.
+  source_dest_check           = false # might be required for the gateway to receive traffic that doesn't match its IP.
   associate_public_ip_address = true
 
   tags {
     Name = "lab-instance-b"
-    Lab = "aws-route-lab"
+    Lab  = "aws-route-lab"
   }
 }

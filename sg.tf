@@ -24,16 +24,16 @@ resource "aws_security_group" "a" {
   }
 
   egress {
-    description     = "Allow any outbound"
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks     = ["0.0.0.0/0"]
+    description = "Allow any outbound"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags {
     Name = "lab-sg-a"
-    Lab = "aws-route-lab"
+    Lab  = "aws-route-lab"
   }
 }
 
@@ -59,15 +59,15 @@ resource "aws_security_group" "b" {
   }
 
   egress {
-    description     = "Allow any outbound"
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks     = ["0.0.0.0/0"]
+    description = "Allow any outbound"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags {
     Name = "lab-sg-b"
-    Lab = "aws-route-lab"
+    Lab  = "aws-route-lab"
   }
 }

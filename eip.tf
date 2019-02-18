@@ -4,7 +4,7 @@ resource "aws_eip" "a" {
 
   tags {
     Name = "lab-eip-a"
-    Lab = "aws-route-lab"
+    Lab  = "aws-route-lab"
   }
 }
 
@@ -14,7 +14,7 @@ resource "aws_eip" "b" {
 
   tags {
     Name = "lab-eip-b"
-    Lab = "aws-route-lab"
+    Lab  = "aws-route-lab"
   }
 }
 

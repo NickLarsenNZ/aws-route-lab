@@ -8,7 +8,7 @@ resource "aws_route_table" "a" {
 
   tags {
     Name = "lab-rtb-a"
-    Lab = "aws-route-lab"
+    Lab  = "aws-route-lab"
   }
 }
 
@@ -22,7 +22,7 @@ resource "aws_route_table" "b" {
 
   tags {
     Name = "lab-rtb-b"
-    Lab = "aws-route-lab"
+    Lab  = "aws-route-lab"
   }
 }
 

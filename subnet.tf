@@ -4,7 +4,7 @@ resource "aws_subnet" "a" {
 
   tags {
     Name = "lab-subnet-a"
-    Lab = "aws-route-lab"
+    Lab  = "aws-route-lab"
   }
 }
 
@@ -14,6 +14,6 @@ resource "aws_subnet" "b" {
 
   tags {
     Name = "lab-subnet-b"
-    Lab = "aws-route-lab"
+    Lab  = "aws-route-lab"
   }
 }

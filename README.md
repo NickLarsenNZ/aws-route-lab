@@ -12,10 +12,10 @@ To test inter-VPC routing via Transit Gateway, validating a third party router/f
 - 1x [`tls_private_key`](https://www.terraform.io/docs/providers/tls/r/private_key.html) - To generate a key pair for the EC2 instances
 - 1x [`local_file`](https://www.terraform.io/docs/providers/local/r/file.html) - For saving the generated SSH private key
 - 2x [`aws_instance`](https://www.terraform.io/docs/providers/aws/r/instance.html) - EC2 instances for generating traffic and capturing.
-- 1x [`aws_ec2_transit_gateway`](https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway.html) - For transit between VPCs
-- 2x [`aws_ec2_transit_gateway_vpc_attachment`](https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway_vpc_attachment.html) - To bind the TGW with the VPCs
 - 2x [`aws_route_table`](https://www.terraform.io/docs/providers/aws/r/route_table.html) - To direct traffic out the IGW, or over the TGW
 - 2x [`aws_route_table_association`](https://www.terraform.io/docs/providers/aws/r/route_table_association.html) - Bind the subnets to predefined route tables
+- 1x [`aws_ec2_transit_gateway`](https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway.html) - For transit between VPCs
+- 2x [`aws_ec2_transit_gateway_vpc_attachment`](https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway_vpc_attachment.html) - To bind the TGW with the VPCs
 - 1x [`aws_ec2_transit_gateway_route_table`](https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway_route_table.html) - To direct traffic between the VPCs
 
 ## Test
