@@ -11,6 +11,11 @@ resource "aws_route_table" "a" {
     gateway_id = "${aws_ec2_transit_gateway.lab.id}"
   }
 
+  route {
+    cidr_block = "10.0.0.0/8"
+    gateway_id = "${aws_ec2_transit_gateway.lab.id}"
+  }
+
   tags {
     Name = "lab-rtb-a"
     Lab  = "aws-route-lab"
@@ -23,6 +28,11 @@ resource "aws_route_table" "b" {
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = "${aws_internet_gateway.b.id}"
+  }
+
+  route {
+    cidr_block = "10.0.0.0/8"
+    network_interface_id  = "${aws_instance.b.network_interface_id}"
   }
 
   route {

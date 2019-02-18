@@ -53,6 +53,10 @@ resource "aws_instance" "b" {
   subnet_id              = "${aws_subnet.b.id}"
   key_name               = "${aws_key_pair.lab.key_name}"
 
+  #network_interface {
+  #
+  #}
+
   # Do I need these?
   source_dest_check           = false # might be required for the gateway to receive traffic that doesn't match its IP.
   associate_public_ip_address = true

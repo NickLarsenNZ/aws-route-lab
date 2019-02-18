@@ -56,6 +56,18 @@ resource "aws_ec2_transit_gateway_route" "to-vpc-b" {
   transit_gateway_route_table_id = "${aws_ec2_transit_gateway_route_table.lab.id}"
 }
 
+resource "aws_ec2_transit_gateway_route" "to-vpc-b-inside" {
+  destination_cidr_block         = "192.168.129.0/24"
+  transit_gateway_attachment_id  = "${aws_ec2_transit_gateway_vpc_attachment.b.id}"
+  transit_gateway_route_table_id = "${aws_ec2_transit_gateway_route_table.lab.id}"
+}
+
+resource "aws_ec2_transit_gateway_route" "to-vpc-b-outside" {
+  destination_cidr_block         = "10.0.0.0/8"
+  transit_gateway_attachment_id  = "${aws_ec2_transit_gateway_vpc_attachment.b.id}"
+  transit_gateway_route_table_id = "${aws_ec2_transit_gateway_route_table.lab.id}"
+}
+
 resource "aws_ec2_transit_gateway_route_table_association" "a" {
   transit_gateway_attachment_id  = "${aws_ec2_transit_gateway_vpc_attachment.a.id}"
   transit_gateway_route_table_id = "${aws_ec2_transit_gateway_route_table.lab.id}"
