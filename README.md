@@ -17,6 +17,8 @@ To test inter-VPC routing via Transit Gateway, validating a third party router/f
 - 1x [`aws_ec2_transit_gateway`](https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway.html) - For transit between VPCs
 - 2x [`aws_ec2_transit_gateway_vpc_attachment`](https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway_vpc_attachment.html) - To bind the TGW with the VPCs
 - 1x [`aws_ec2_transit_gateway_route_table`](https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway_route_table.html) - To direct traffic between the VPCs
+- [`aws_ec2_transit_gateway_route`](https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway_route.html) - For routes to either VPC, or the test prefix
+- [`aws_ec2_transit_gateway_route_table_association`](https://www.terraform.io/docs/providers/aws/r/ec2_transit_gateway_route_table_association.html) - To bind the route table with the Transit Gateway
 
 ## Test
 Assuming correct routes between each VPC via the Transit Gateway:
