@@ -26,5 +26,6 @@ Assuming correct routes between each VPC via the Transit Gateway:
 - Ping some other address (subnet outside of VPC ranges, that are added to the routing table), and ping to that, and seeing the traffic reach the other EC2 instance (pretending to be the gateway for that subnet)
 
 ## SSH
+- `chmod 600 instance.pem`
 - `ssh -i instance.pem ec2-user@$(terraform output instance_a_ip)`
 - `ssh -i instance.pem ec2-user@$(terraform output instance_b_ip)`
