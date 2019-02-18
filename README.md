@@ -22,3 +22,7 @@ To test inter-VPC routing via Transit Gateway, validating a third party router/f
 Assuming correct routes between each VPC via the Transit Gateway:
 - Ping from one host to the other, and see the traffic using TCPdump
 - Ping some other address (subnet outside of VPC ranges, that are added to the routing table), and ping to that, and seeing the traffic reach the other EC2 instance (pretending to be the gateway for that subnet)
+
+## SSH
+- `ssh -i instance.pem ec2-user@$(terraform output instance_a_ip)`
+- `ssh -i instance.pem ec2-user@$(terraform output instance_b_ip)`
