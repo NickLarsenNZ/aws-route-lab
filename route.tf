@@ -31,8 +31,8 @@ resource "aws_route_table" "b" {
   }
 
   route {
-    cidr_block = "10.0.0.0/8"
-    network_interface_id  = "${aws_instance.b.network_interface_id}"
+    cidr_block           = "10.0.0.0/8"
+    network_interface_id = "${aws_instance.b.network_interface_id}"
   }
 
   route {

@@ -60,7 +60,6 @@ resource "aws_instance" "b" {
   # Do I need these?
   source_dest_check           = false # might be required for the gateway to receive traffic that doesn't match its IP.
   associate_public_ip_address = true
-
   tags {
     Name = "lab-instance-b"
     Lab  = "aws-route-lab"
